@@ -1,0 +1,27 @@
+{
+    "name": "leandro-grg/luba",
+    "description": "Enhance your clients experience by interacting with them about a project",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Leandro Gomez",
+            "email": "leandrogrotnig11@gmail.com",
+            "homepage": "www.leandroggomez.com.ar"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "GRG\\Luba\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "\\GRG\\Luba\\ServiceProvider"
+            ]
+        }
+    }
+}
