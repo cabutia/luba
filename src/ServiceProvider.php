@@ -10,12 +10,22 @@ class ServiceProvider extends LaravelServiceProvider
     {
         $this->registerViews();
         $this->registerMigrations();
+        $this->registerTranslations();
     }
 
     public function register ()
     {
         $this->registerConfig();
         $this->registerRoutes();
+    }
+
+    /**
+     * Register the package's translation strings
+     * @return void
+     */
+    public function registerTranslations ()
+    {
+        $this->loadTranslationsFrom(__DIR__ . '/Lang', 'luba');
     }
 
     /**
@@ -43,6 +53,7 @@ class ServiceProvider extends LaravelServiceProvider
     protected function registerConfig ()
     {
         $this->mergeConfigFrom(__DIR__.'/Config/package.php', 'luba');
+        $this->mergeConfigFrom(__DIR__.'/Config/navigation.php', 'luba::navigation');
     }
 
     /**

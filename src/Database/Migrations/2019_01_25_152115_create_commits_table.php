@@ -39,6 +39,7 @@ class CreateCommitsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('commits');
+        $config = config('luba.database');
+        Schema::dropIfExists($config['prefix'] . 'commits');
     }
 }

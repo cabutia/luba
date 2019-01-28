@@ -30,6 +30,7 @@ class CreateBranchesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('branches');
+        $config = config('luba.database');
+        Schema::dropIfExists($config['prefix'] . 'branches');
     }
 }

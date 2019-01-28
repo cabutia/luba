@@ -29,6 +29,7 @@ class CreateRolesTable extends Migration
      */
     public function down()
     {
-        //
+        $config = config('luba.database');
+        Schema::dropIfExists($config['prefix'] . 'roles');
     }
 }

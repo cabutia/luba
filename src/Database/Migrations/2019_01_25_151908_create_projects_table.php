@@ -21,7 +21,7 @@ class CreateProjectsTable extends Migration
             $table->string('path')->nullable();
             $table->string('image')->nullable();
             $table->boolean('public')->default(false);
-            $table->timestamp('last_commit')->nullable();
+            $table->timestamp('last_sync')->nullable();
             $table->timestamps();
         });
     }
@@ -33,6 +33,7 @@ class CreateProjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projects');
+        $config = config('luba.database');
+        Schema::dropIfExists($config['prefix'] . 'projects');
     }
 }

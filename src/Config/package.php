@@ -9,7 +9,7 @@ return [
         'provider' => true,
         'prefix' => 'luba',
         'middlewares' => [
-            // Middlewares here...
+            'web', 'auth'
         ]
     ]
 ];
