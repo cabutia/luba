@@ -5,7 +5,7 @@
             <div class="col-md-4 col-lg-3">
                 <a
                     class="card"
-                    href="{{ route('projects.detail', $project->id) }}">
+                    href="{{ route('luba::projects.detail', $project->id) }}">
                     <div class="card-body">
                         <p class="card-text">
                             <strong>{{ $project->title }}</strong><br>

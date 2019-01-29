@@ -3,13 +3,17 @@
 namespace GRG\Luba\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use GRG\Luba\Models\Project;
 
 class ProjectsController
 {
 
+    protected $config;
+
     public function __construct ()
     {
         // TODO: This controller must only be accessed by administrators.
+        $this->config = config('luba');
     }
 
     /**
@@ -33,11 +37,11 @@ class ProjectsController
     public function store (Request $request)
     {
         $data = $request->validate([
-            'title' => 'required|string|min:8',
+            'title' => 'required|string|min:8|unique:' . $this->config['database']['prefix'] . 'projects',
             'description' => 'nullable|string',
             'path' => 'nullable|string',
             'image' => 'nullable|image'
         ]);
-        dump($data);
+        $project = Project::create($data);
     }
 }

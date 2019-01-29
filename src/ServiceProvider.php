@@ -2,6 +2,7 @@
 
 namespace GRG\Luba;
 
+use \Spatie\BladeX\Facades\BladeX;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 
 class ServiceProvider extends LaravelServiceProvider
@@ -11,12 +12,26 @@ class ServiceProvider extends LaravelServiceProvider
         $this->registerViews();
         $this->registerMigrations();
         $this->registerTranslations();
+        $this->registerComponents();
     }
 
     public function register ()
     {
         $this->registerConfig();
         $this->registerRoutes();
+    }
+
+    /**
+     * Register the package's blade custom components
+     * @return void
+     */
+    public function registerComponents ()
+    {
+        $components = config('luba::components');
+        foreach ($components as $file => $component) {
+            $tag = $component['tag'];
+            BladeX::component('luba-components::'. $file)->tag('luba-' . $tag);
+        }
     }
 
     /**
@@ -44,6 +59,7 @@ class ServiceProvider extends LaravelServiceProvider
     protected function registerViews ()
     {
         $this->loadViewsFrom(__DIR__.'/Resources/Views', 'luba');
+        $this->loadViewsFrom(__DIR__.'/Resources/Components', 'luba-components');
     }
 
     /**
@@ -54,6 +70,7 @@ class ServiceProvider extends LaravelServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/Config/package.php', 'luba');
         $this->mergeConfigFrom(__DIR__.'/Config/navigation.php', 'luba::navigation');
+        $this->mergeConfigFrom(__DIR__.'/Config/components.php', 'luba::components');
     }
 
     /**
@@ -68,6 +85,7 @@ class ServiceProvider extends LaravelServiceProvider
         \Route::prefix($prefix)
             ->middleware($middlewares)
             ->namespace('GRG\\Luba\\Controllers')
+            ->as('luba::')
             ->group(__DIR__.'/Routes/web.php');
     }
 }

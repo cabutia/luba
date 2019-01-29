@@ -9,7 +9,8 @@ class ProjectsController
 {
     public function index ()
     {
-        $projects = Project::where('public', true)->get();
+        // $projects = Project::where('public', true)->get();
+        $projects = Project::all();
         return view('luba::projects.index')
             ->with(compact('projects'));
     }

@@ -13,12 +13,12 @@ return [
             [
                 'title' => 'All projects',
                 'auth' => true,
-                'route' => 'projects.index'
+                'route' => 'luba::projects.index'
             ],
             [
                 'title' => 'Add project',
                 'auth' => true,
-                'route' => 'projects.add'
+                'route' => 'luba::projects.add'
             ]
         ]
     ]

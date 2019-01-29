@@ -7,11 +7,13 @@
         {
             "name": "Leandro Gomez",
             "email": "leandrogrotnig11@gmail.com",
-            "homepage": "www.leandroggomez.com.ar"
+            "homepage": "http://www.leandroggomez.com.ar"
         }
     ],
     "minimum-stability": "stable",
-    "require": {},
+    "require": {
+        "spatie/laravel-blade-x": "^2.1"
+    },
     "autoload": {
         "psr-4": {
             "GRG\\Luba\\": "src/"

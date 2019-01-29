@@ -29,7 +29,7 @@ trait ProjectExtraAttributes
 
         // If there's no commits, then return "No commits" string.
         if ($this->commits->count() === 0) {
-            return "No commits.";
+            return null;
         }
 
         // Loops through commits, and then add a point to each colaborator.
