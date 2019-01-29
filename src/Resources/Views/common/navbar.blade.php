@@ -18,14 +18,14 @@
                     @if (isset($link['childs']) && count($link['childs']) > 0)
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                                {{ $link['title'] }}
+                                @lang('luba::navigation.'. $link['title'])
                             </a>
                             <div class="dropdown-menu">
                                 @foreach ($link['childs'] as $child)
                                     <a
                                         class="dropdown-item"
                                         href="{{ isset($child['href']) ? url($child['href']) : (isset($child['route']) ? route($child['route']) : '#') }}">
-                                        {{ $child['title'] }}
+                                        @lang('luba::navigation.'. $child['title'])
                                     </a>
                                 @endforeach
                             </div>
@@ -35,7 +35,7 @@
                             <a
                                 class="nav-link"
                                 href="{{ isset($link['href']) ? url($link['href']) : (isset($link['route']) ? route($link['route']) : '#') }}">
-                                {{ $link['title'] }}
+                                @lang('luba::navigation.'. $child['title'])
                             </a>
                         </li>
                     @endif

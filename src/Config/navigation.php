@@ -2,23 +2,28 @@
 
 return [
     [
-        'title' => 'Home',
+        'title' => 'home',
         'href' => '/',
         'auth' => false
     ],
     [
-        'title' => 'Projects',
+        'title' => 'projects',
         'auth' => true,
         'childs' => [
             [
-                'title' => 'All projects',
+                'title' => 'projects_all',
                 'auth' => true,
                 'route' => 'luba::projects.index'
             ],
             [
-                'title' => 'Add project',
+                'title' => 'projects_add',
                 'auth' => true,
                 'route' => 'luba::projects.add'
+            ],
+            [
+                'title' => 'projects_management',
+                'auth' => true,
+                'route' => 'luba::projects.management'
             ]
         ]
     ]

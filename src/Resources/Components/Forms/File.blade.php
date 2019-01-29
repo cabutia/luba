@@ -17,3 +17,12 @@
         @endif
     </div>
 </div>
+
+@if (isset($help))
+    @push('help_card_'. $help)
+        <div class="col-12">
+            <h5>@lang('luba::forms.'. $label)</h5>
+            <p>@lang('luba::forms.help.'. $label)</p>
+        </div>
+    @endpush
+@endif

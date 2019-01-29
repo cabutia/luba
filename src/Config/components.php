@@ -6,6 +6,20 @@ return [
     ],
     'Forms.File' => [
         'tag' => 'input-file',
-        'viewmodel' => GRG\Luba\Resources\Components\Forms\FileViewModel::class
+    ],
+    'Forms.Select' => [
+        'tag' => 'select'
+    ],
+    'Forms.Buttons' => [
+        'tag' => 'form-buttons'
+    ],
+    'Layout.HelpCard' => [
+        'tag' => 'help-card'
+    ],
+    'Layout.SideCard' => [
+        'tag' => 'side-card'
+    ],
+    'Layout.Tabs' => [
+        'tag' => 'tabs'
     ]
 ];

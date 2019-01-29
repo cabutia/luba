@@ -17,6 +17,92 @@ class ProjectsController
     }
 
     /**
+     * Renders the general project management view.
+     * It's like the main index view, but with many administration options.
+     * This view shows another kind of overview.
+     *
+     * @return View
+     */
+    public function management ()
+    {
+        $projects = Project::all();
+        return view('luba::projects.management')
+            ->with(compact('projects'));
+    }
+
+    /**
+     * Renders the specific project management view.
+     *
+     * @return View
+     */
+    public function manage ($id)
+    {
+        return redirect(
+            route('luba::projects.manage.details', $id)
+        );
+    }
+
+    /**
+     * Renders the project's details sub-view
+     *
+     * @return View
+     */
+    public function details ($id)
+    {
+        $project = Project::findEncoded($id);
+        return view('luba::projects.manage.details')
+            ->with(compact('project'));
+    }
+
+    /**
+     * Renders the project's actions sub-view
+     *
+     * @return View
+     */
+    public function actions ($id)
+    {
+        $project = Project::findEncoded($id);
+        return view('luba::projects.manage.actions')
+            ->with(compact('project'));
+    }
+
+    /**
+     * Renders the project's commits sub-view
+     *
+     * @return View
+     */
+    public function commits ($id)
+    {
+        $project = Project::findEncoded($id);
+        return view('luba::projects.manage.commits')
+            ->with(compact('project'));
+    }
+
+    /**
+     * Renders the project's requests sub-view
+     *
+     * @return View
+     */
+    public function requests ($id)
+    {
+        $project = Project::findEncoded($id);
+        return view('luba::projects.manage.requests')
+            ->with(compact('project'));
+    }
+
+    /**
+     * Renders the project's issues sub-view
+     *
+     * @return View
+     */
+    public function issues ($id)
+    {
+        $project = Project::findEncoded($id);
+        return view('luba::projects.manage.issues')
+            ->with(compact('project'));
+    }
+
+    /**
      * Renders the project add view.
      * From here, you can fill a form in order to add a new project to the
      * platform. By default, this project visibility will be publicitly hidden,

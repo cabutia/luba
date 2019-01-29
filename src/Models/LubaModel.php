@@ -17,4 +17,27 @@ class LubaModel extends Model
         $this->table = $prefix . $this->getTable() . $suffix;
         parent::__construct($attributes);
     }
+
+    public function getEncodedIdAttribute()
+    {
+        return self::encode($this->id);
+    }
+
+    public static function findEncoded ($id)
+    {
+        $decodedId = self::decode($id);
+        return self::find($decodedId);
+    }
+
+    public static function decode ($string)
+    {
+        $base64encoded = urldecode($string);
+        return base64_decode($base64encoded);
+    }
+
+    public static function encode ($string)
+    {
+        $base64encoded = base64_encode($string);
+        return urlencode($base64encoded);
+    }
 }
