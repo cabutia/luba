@@ -7,7 +7,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         @stack('luba::meta')
 
-        <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('/css/luba.css') }}">
         @stack('luba::styles')
 
         @stack('luba::head-scripts')
@@ -23,7 +23,7 @@
             </div>
             @yield('content')
         </div>
-        <script src="{{ asset('/js/app.js') }}"></script>
+        <script src="{{ asset('/js/luba.js') }}"></script>
         @stack('luba::scripts')
     </body>
 </html>

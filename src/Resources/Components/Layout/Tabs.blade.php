@@ -5,7 +5,7 @@
                 <li class="nav-item">
                     <a
                         href="{{ $tab['route'] }}"
-                        class="nav-link">
+                        class="nav-link {{ luba_active_route($tab['route']) ? 'active' : '' }}">
                         @lang($tab['title'])
                     </a>
                 </li>
