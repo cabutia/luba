@@ -1,6 +1,9 @@
 @extends('luba::projects._master')
 @section('page.title', 'Project detail: ' . $project->title)
 @section('detail')
+    <luba-breadcrumb
+        :title="$project->title"
+        :route="route('luba::projects.detail', $project->encodedId)"/>
     <div class="row">
         <div class="col-md-6 pt-3">
             <div class="row align-items-center">

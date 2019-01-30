@@ -22,5 +22,6 @@ return [
     'project_solved_issues' => 'Solved issues',
     'project_details' => 'Details',
     'project_actions' => 'Actions',
-    'project_commits' => 'Commits'
+    'project_commits' => 'Commits',
+    'project_manage' => 'Manage'
 ];

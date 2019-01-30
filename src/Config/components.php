@@ -21,5 +21,8 @@ return [
     ],
     'Layout.Tabs' => [
         'tag' => 'tabs'
+    ],
+    'Layout.Breadcrumb' => [
+        'tag' => 'breadcrumb'
     ]
 ];

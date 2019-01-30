@@ -14,12 +14,13 @@
         @stack('luba::head-scripts')
     </head>
     <body>
+        @include('luba::common.navbar')
+        @include('luba::common.breadcrumbs')
         <div class="container" id="app">
-            @include('luba::common.navbar')
             <div class="row mb-3">
                 <div class="col-12">
-                    <h1>@yield('page.title')</h1>
-                    <h3>@yield('page.subtitle')</h3>
+                    {{-- <h1>@yield('page.title')</h1> --}}
+                    {{-- <h3>@yield('page.subtitle')</h3> --}}
                 </div>
             </div>
             @yield('content')

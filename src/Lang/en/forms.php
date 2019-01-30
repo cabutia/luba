@@ -14,6 +14,7 @@ return [
     'project_image' => 'Project logo/image',
     'project_image_hint' => 'Select an image or logo for the project',
     'project_submit' => 'Add project to platform',
+    'project_search' => 'Buscar',
 
     'help' => [
         'project_title' =>
@@ -27,5 +28,10 @@ return [
             'This is the path of the project\'s repository. Take into
             account that Luba will look here for commits, branches, and
             so on.'
+    ],
+
+    'search' => [
+        'project_title' => 'Project title',
+        'project_title_hint' => 'Enter the project\'s title'
     ]
 ];

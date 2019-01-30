@@ -2,6 +2,9 @@
 @section('page.title', __('luba::ui.add_project'))
 @section('page.subtitle', __('luba::ui.add_project_description'))
 @section('detail')
+    <luba-breadcrumb
+        title="luba::navigation.projects_all"
+        :route="route('luba::projects.index')"/>
     <div class="row">
         <!-- Form inputs -->
         <div class="col-md-8">

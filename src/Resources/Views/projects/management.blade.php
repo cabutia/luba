@@ -2,6 +2,9 @@
 @section('page.title', __('luba::titles.project_management'))
 @section('page.subtitle', __('luba::titles.project_management_description'))
 @section('detail')
+    <luba-breadcrumb
+        title="luba::navigation.projects_management"
+        :route="route('luba::projects.management')"/>
     <div class="row">
         <div class="col-md-8">
             @foreach ($projects as $project)

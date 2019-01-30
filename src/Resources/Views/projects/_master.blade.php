@@ -1,5 +1,7 @@
 @extends('luba::layouts.master')
-@section('page.title', 'Projects')
 @section('content')
+    <luba-breadcrumb
+        title="luba::navigation.projects"
+        :route="route('luba::projects.index')"/>
     @yield('detail')
 @stop

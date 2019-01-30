@@ -17,7 +17,7 @@ class ProjectsController
 
     public function detail ($id)
     {
-        $project = Project::find($id);
+        $project = Project::findEncoded($id);
         $commits = $project->commits()->paginate(5);
         return view('luba::projects.detail')
             ->with(compact('project', 'commits'));

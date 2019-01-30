@@ -12,7 +12,9 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "spatie/laravel-blade-x": "^2.1"
+        "spatie/laravel-blade-x": "^2.1",
+        "teqneers/php-stream-wrapper-for-git": "^2.0",
+        "tivie/php-git-log-parser": "^0.1.4"
     },
     "autoload": {
         "psr-4": {
