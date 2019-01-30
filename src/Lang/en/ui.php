@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'loading' => 'Loading',
     'add_project' => 'Add project',
     'add_project_description' => 'Add projects to the platform, and then sync them!',
     'no_data' => 'No data',
@@ -23,5 +24,8 @@ return [
     'project_details' => 'Details',
     'project_actions' => 'Actions',
     'project_commits' => 'Commits',
-    'project_manage' => 'Manage'
+    'project_manage' => 'Manage',
+    'project_visibility' => 'Publicly visible',
+    'project_visibility_true' => 'Visible',
+    'project_visibility_false' => 'Hidden'
 ];

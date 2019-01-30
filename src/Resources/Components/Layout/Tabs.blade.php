@@ -1,4 +1,4 @@
-<div class="row mt-3">
+<div class="row mt-3 mb-3">
     <div class="col-12">
         <ul class="nav nav-tabs nav-fill">
             @foreach ($tabs as $tab)

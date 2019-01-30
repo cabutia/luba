@@ -18,11 +18,19 @@
             <h4>{{ $project->subtitle }}</h4>
         </div>
     </div>
+
     <!-- Tabs -->
     <luba-tabs :tabs="$project->manageTabs"></luba-tabs>
 
+    <!-- Alerts -->
+    <div class="row">
+        <div class="col">
+            @include('luba::common.alerts')
+        </div>
+    </div>
+
     <!-- Content -->
-    <div class="mt-3">
+    <div class="">
         @yield('detail.project_management')
     </div>
 @stop

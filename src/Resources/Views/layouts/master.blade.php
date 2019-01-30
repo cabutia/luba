@@ -13,7 +13,8 @@
 
         @stack('luba::head-scripts')
     </head>
-    <body>
+    <body onbeforeunload="handleBeforeUnload(event)" onload="handleOnLoad(event)">
+        @include('luba::common.preloader')
         @include('luba::common.navbar')
         @include('luba::common.breadcrumbs')
         <div class="container" id="app">
@@ -27,6 +28,7 @@
         </div>
         <script src="{{ asset(config('luba.assets.vendor_js')) }}"></script>
         <script src="{{ asset(config('luba.assets.js')) }}"></script>
+        @include('luba::common.development')
         @stack('luba::scripts')
     </body>
 </html>

@@ -11,7 +11,16 @@ trait ProjectExtraAttributes
      */
     public function getLastCommitAttribute ()
     {
-        return $this->commits()->orderBy('date', 'DESC')->first();
+        return $this->commits->sortByDesc('date')->first();
+    }
+
+    /**
+     * Returns the first commit
+     * @return String
+     */
+    public function getFirstCommitAttribute ()
+    {
+        return $this->commits->sortBy('date')->first();
     }
 
     /**
@@ -49,18 +58,6 @@ trait ProjectExtraAttributes
 
         // Format: <AuthorName> (<CommitCount>)
         return $topContributor['author'] . ' ('. $topContributor['commits'] .')';
-    }
-
-    /**
-     * Returns the first commit
-     * @return String
-     */
-    public function getFirstCommitAttribute ()
-    {
-        if ($this->commits->count() > 0) {
-            return $this->commits()->orderBy('date', 'ASC')->first();
-        }
-        return __('luba::ui.no_data');
     }
 
     /**

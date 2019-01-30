@@ -4,6 +4,7 @@ namespace GRG\Luba\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use GRG\Luba\Models\Project;
+use GRG\Luba\Classes\PSync;
 
 class ProjectsController
 {
@@ -129,5 +130,20 @@ class ProjectsController
             'image' => 'nullable|image'
         ]);
         $project = Project::create($data);
+    }
+
+    /**
+     * Syncs the project commits with the database.
+     */
+    public function sync (Request $request, $id)
+    {
+        $request->validate([
+            'project_id' => 'required|string'
+        ]);
+        $project = Project::findEncoded($request->id);
+        $psync = new PSync($project);
+        $psync->sync();
+        return redirect(route('luba::projects.manage.actions', $id))
+            ->withSuccesses(__('luba::messages.success.project_sync_success'));
     }
 }

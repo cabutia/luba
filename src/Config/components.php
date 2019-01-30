@@ -24,5 +24,8 @@ return [
     ],
     'Layout.Breadcrumb' => [
         'tag' => 'breadcrumb'
+    ],
+    'Layout.Loader' => [
+        'tag' => 'page-preloader'
     ]
 ];

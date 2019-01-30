@@ -16,6 +16,5 @@ class Project extends LubaModel
         'path',
         'image',
         'public',
-        'last_commit'
     ];
 }
