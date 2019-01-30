@@ -13,12 +13,24 @@ class ServiceProvider extends LaravelServiceProvider
         $this->registerMigrations();
         $this->registerTranslations();
         $this->registerComponents();
+        $this->registerFiles();
     }
 
     public function register ()
     {
         $this->registerConfig();
         $this->registerRoutes();
+    }
+
+    /**
+     * Register the files that will be published
+     * @return void
+     */
+    public function registerFiles ()
+    {
+        $this->publishes([
+            __DIR__ . '/Resources/Assets/dist' => public_path('vendor/luba')
+        ], 'assets');
     }
 
     /**

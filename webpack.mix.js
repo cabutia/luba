@@ -1,0 +1,5 @@
+let mix = require('laravel-mix')
+mix.js('src/Resources/Assets/js/app.js', 'src/Resources/Assets/dist')
+   .js('src/Resources/Assets/js/vendor.js', 'src/Resources/Assets/dist')
+   .sass('src/Resources/Assets/sass/app.scss', 'src/Resources/Assets/dist')
+   .sass('src/Resources/Assets/sass/vendor.scss', 'src/Resources/Assets/dist')
