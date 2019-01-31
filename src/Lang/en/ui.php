@@ -6,6 +6,7 @@ return [
     'add_project_description' => 'Add projects to the platform, and then sync them!',
     'no_data' => 'No data',
     'no_commits' => 'There are no commits yet',
+    'project_edit' => 'Edit project',
     'project_no_description' => 'No description provided',
     'project_not_synced' => 'This project had no syncronizations',
     'project_created_at' => 'Creation date',

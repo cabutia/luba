@@ -17,6 +17,12 @@
             <h3>{{ $project->title }}</h3>
             <h4>{{ $project->subtitle }}</h4>
         </div>
+        <div class="col-auto">
+            <a href="{{ route('luba::projects.edit', $project->encodedId) }}" class="btn btn-primary">
+                <i class="fa fa-edit"></i>
+                @lang('luba::ui.project_edit')
+            </a>
+        </div>
     </div>
 
     <!-- Tabs -->

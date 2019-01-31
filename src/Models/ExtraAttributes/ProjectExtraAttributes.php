@@ -5,13 +5,25 @@ namespace GRG\Luba\Models\ExtraAttributes;
 trait ProjectExtraAttributes
 {
     /**
+     * Verifies if the project has at least 1 commit.
+     * @return Boolean
+     */
+    public function getHasCommitsAttribute()
+    {
+        return $this->commits->count() > 0;
+    }
+
+    /**
      * Gets the last commit made on the project. It's just for help, you can do
      * it by using the relationship $this->commits and building your own query.
      * @return GRG\Luba\Models\Commit
      */
     public function getLastCommitAttribute ()
     {
-        return $this->commits->sortByDesc('date')->first();
+        if ($this->commits) {
+            return $this->commits->sortByDesc('date')->first();
+        }
+        return __('luba::ui.no_data');
     }
 
     /**
@@ -20,7 +32,10 @@ trait ProjectExtraAttributes
      */
     public function getFirstCommitAttribute ()
     {
-        return $this->commits->sortBy('date')->first();
+        if ($this->commits) {
+            return $this->commits->sortBy('date')->first();
+        }
+        return __('luba::ui.no_data');
     }
 
     /**

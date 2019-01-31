@@ -14,12 +14,26 @@ class ServiceProvider extends LaravelServiceProvider
         $this->registerTranslations();
         $this->registerComponents();
         $this->registerFiles();
+        $this->registerCommands();
     }
 
     public function register ()
     {
         $this->registerConfig();
         $this->registerRoutes();
+    }
+
+    /**
+     * Register the package commands
+     * @return void
+     */
+    protected function registerCommands ()
+    {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                Commands\LubaSeeder::class
+            ]);
+        }
     }
 
     /**

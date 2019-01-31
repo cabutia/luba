@@ -28,11 +28,11 @@
                 </div>
                 <div class="col-sm-6 col-md-3 text-center">
                     <small>@lang('luba::ui.project_last_update')</small>
-                    <p>{{ $project->lastCommit->date }}</p>
+                    <p>{{ $project->hasCommits ? $project->lastCommit->date : __('luba::ui.no_data') }}</p>
                 </div>
                 <div class="col-sm-6 col-md-3 text-center">
                     <small>@lang('luba::ui.project_created_at')</small>
-                    <p>{{ $project->firstCommit->date }}</p>
+                    <p>{{ $project->hasCommits ? $project->firstCommit->date : __('luba::ui.no_data') }}</p>
                 </div>
                 <div class="col-sm-6 col-md-3 text-center">
                     <small>@lang('luba::ui.project_visibility')</small>

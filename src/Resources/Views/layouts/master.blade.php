@@ -9,6 +9,7 @@
 
         <link rel="stylesheet" href="{{ asset(config('luba.assets.vendor_css')) }}">
         <link rel="stylesheet" href="{{ asset(config('luba.assets.css')) }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
         @stack('luba::styles')
 
         @stack('luba::head-scripts')
