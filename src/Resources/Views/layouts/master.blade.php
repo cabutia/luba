@@ -14,7 +14,7 @@
 
         @stack('luba::head-scripts')
     </head>
-    <body onbeforeunload="handleBeforeUnload(event)" onload="handleOnLoad(event)">
+    <body @if (config('luba.ui.preloader')) onbeforeunload="handleBeforeUnload(event)" onload="handleOnLoad(event)" @endif class="pb-4">
         @include('luba::common.preloader')
         @include('luba::common.navbar')
         @include('luba::common.breadcrumbs')

@@ -20,7 +20,6 @@ class CreateCommitsTable extends Migration
             $table->string('author')->nullable();
             $table->timestamp('date')->nullable();
             $table->string('description')->nullable();
-            $table->string('comments')->nullable();
             $table->unsignedInteger('project_id');
 
             $table

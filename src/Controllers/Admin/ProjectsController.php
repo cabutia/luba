@@ -74,7 +74,7 @@ class ProjectsController
      */
     public function commits ($id)
     {
-        $project = Project::findEncoded($id);
+        $project = Project::with('commits')->find(Project::decode($id));
         return view('luba::projects.manage.commits')
             ->with(compact('project'));
     }
@@ -145,5 +145,36 @@ class ProjectsController
         $psync->sync();
         return redirect(route('luba::projects.manage.actions', $id))
             ->withSuccesses(__('luba::messages.success.project_sync_success'));
+    }
+
+    /**
+     * Renders the edit project view.
+     * @return View
+     */
+    public function edit ($id)
+    {
+        $project = Project::findEncoded($id);
+        return view ('luba::projects.edit')
+            ->with(compact('project'));
+    }
+
+    /**
+     * Updates a project
+     * @return View
+     */
+    public function update (Request $request)
+    {
+        $data = $request->validate([
+            'id' => 'required|string',
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'path' => 'required|string',
+            'public' => 'required|boolean'
+        ]);
+
+        $project = Project::findEncoded($request->id);
+        $project->update($data);
+        return redirect(route('luba::projects.manage.details', $project->encodedId))
+            ->withSuccesses(__('luba::messages.success.project_update_success'));
     }
 }

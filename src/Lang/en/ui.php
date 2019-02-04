@@ -28,5 +28,12 @@ return [
     'project_manage' => 'Manage',
     'project_visibility' => 'Publicly visible',
     'project_visibility_true' => 'Visible',
-    'project_visibility_false' => 'Hidden'
+    'project_visibility_false' => 'Hidden',
+    'commit_author' => 'Uploaded by',
+    'commit_description' => 'Message',
+    'commit_comments' => 'Aditional comments',
+    'commit_date' => 'Upload date',
+    'add_comments' => 'Add comments',
+    'add_preview' => 'Add preview',
+    'commit_hash' => 'Commit hash'
 ];

@@ -14,7 +14,9 @@ return [
     'project_image' => 'Project logo/image',
     'project_image_hint' => 'Select an image or logo for the project',
     'project_submit' => 'Add project to platform',
-    'project_search' => 'Buscar',
+    'project_search' => 'Search',
+    'project_public' => 'Visible',
+    'project_update' => 'Update project',
 
     'help' => [
         'project_title' =>

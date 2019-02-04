@@ -16,7 +16,8 @@ return [
         'css' => '/vendor/luba/app.css',
         'vendor_css' => '/vendor/luba/vendor.css',
         'js' => '/vendor/luba/app.js',
-        'vendor_js' => '/vendor/luba/vendor.js'
+        'vendor_js' => '/vendor/luba/vendor.js',
+        'uploaded_images' => '/luba/commits/'
     ],
     'ui' => [
         'preloader' => false

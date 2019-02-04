@@ -4,8 +4,14 @@ return [
     'Forms.Text' => [
         'tag' => 'input-text'
     ],
+    'Forms.Checkbox' => [
+        'tag' => 'input-check'
+    ],
     'Forms.File' => [
         'tag' => 'input-file',
+    ],
+    'Forms.Image' => [
+        'tag' => 'input-image',
     ],
     'Forms.Select' => [
         'tag' => 'select'

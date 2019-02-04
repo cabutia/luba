@@ -16,7 +16,6 @@ class Commit extends LubaModel
         'author',
         'date',
         'description',
-        'comments',
         'project_id'
     ];
 

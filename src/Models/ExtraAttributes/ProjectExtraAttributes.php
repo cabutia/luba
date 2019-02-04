@@ -150,7 +150,7 @@ trait ProjectExtraAttributes
         return [
             [
                 'route' => route('luba::projects.manage.details', $id),
-                'title' => 'luba::ui.project_details'
+                'title' => 'luba::ui.project_details',
             ],
             [
                 'route' => route('luba::projects.manage.actions', $id),
@@ -162,11 +162,13 @@ trait ProjectExtraAttributes
             ],
             [
                 'route' => route('luba::projects.manage.requests', $id),
-                'title' => 'luba::ui.project_requests'
+                'title' => 'luba::ui.project_requests',
+                'disabled' => true
             ],
             [
                 'route' => route('luba::projects.manage.issues', $id),
-                'title' => 'luba::ui.project_issues'
+                'title' => 'luba::ui.project_issues',
+                'disabled' => true
             ]
         ];
     }

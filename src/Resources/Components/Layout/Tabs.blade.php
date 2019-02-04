@@ -4,8 +4,8 @@
             @foreach ($tabs as $tab)
                 <li class="nav-item">
                     <a
-                        href="{{ $tab['route'] }}"
-                        class="nav-link {{ luba_active_route($tab['route']) ? 'active' : '' }}">
+                        href="{{ isset($tab['disabled']) && $tab['disabled'] ? '#' : $tab['route'] }}"
+                        class="nav-link {{ luba_active_route($tab['route']) ? 'active' : '' }} {{ isset($tab['disabled']) && $tab['disabled'] ? 'disabled' : '' }}">
                         @lang($tab['title'])
                     </a>
                 </li>

@@ -3,7 +3,7 @@
     <input
         type="text"
         name="{{ $name }}"
-        value="{{ old($name) }}"
+        value="{{ isset($value) ? $value : old($name) }}"
         class="form-control {{ $errors->has($name) ? 'is-invalid' : '' }}"
         placeholder="@lang('luba::forms.'. $label .'_hint')"
         {{ isset($required) ? 'required' : '' }}>
